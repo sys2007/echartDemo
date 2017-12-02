@@ -1,7 +1,7 @@
 {
-  "name": "y",
+  "name": "shinyWeb",
   "version": "1.0.0",
-  "description": "A Vue.js project",
+  "description": "sjz shiny project",
   "author": "greenlover2008 <greenlover2008@gmail.com>",
   "private": true,
   "scripts": {
@@ -13,8 +13,9 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "echarts": "^3.8.5",
     "vue": "^2.5.2",
-    "vue-echarts": "^2.5.1",
+    "vue-echarts-v3": "^1.0.15",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
@@ -33,7 +34,7 @@
     "copy-webpack-plugin": "^4.0.1",
     "cross-spawn": "^5.0.1",
     "css-loader": "^0.28.0",
-    "element-ui": "^2.0.5",
+    "element-ui": "^2.0.7",
     "eventsource-polyfill": "^0.9.6",
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^1.1.4",

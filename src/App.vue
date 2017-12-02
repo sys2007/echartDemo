@@ -1,7 +1,8 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <transition>
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
 
@@ -12,12 +13,16 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  @charset "utf-8";
+  html{ width:100%; height:100%;}
+
+  body{
+    padding:0;
+    margin:0;
+    font-family:"微软雅黑";
+    background:#02071b; 
+    background:url(./assets/bg.jpg) no-repeat bottom center; 
+  }
+  input{font-family:"微软雅黑";}
+  ul,li{padding:0; margin:0; list-style:none;}
 </style>
