@@ -1,3 +1,4 @@
+<!-- 仪表图 -->
 <template>
   <div :style="{width: chartWidth + 'px', height: chartHeight + 'px'}">
     <IEcharts :option="gauge"></IEcharts>
@@ -14,7 +15,7 @@
       },
       props:{
         chartWidth:{
-          default: 100
+          default: 140
         },
         chartHeight:{
           default: 100

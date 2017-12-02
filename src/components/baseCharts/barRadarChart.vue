@@ -1,3 +1,4 @@
+<!-- 条+雷达饼图 -->
 <template>
   <div :style="{width: chartWidth + 'px', height: chartHeight + 'px'}">
     <IEcharts :option="barRadar"></IEcharts>

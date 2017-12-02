@@ -1,11 +1,13 @@
+<!-- 条+2饼图 -->
 <template>
   <div :style="{width: chartWidth + 'px', height: chartHeight + 'px'}">
-    <IEcharts :option="barPies"></IEcharts>
+    <IEcharts :option="barPie"></IEcharts>
   </div>
 </template>
 
 <script>
     import IEcharts from 'vue-echarts-v3/src/lite.js'
+    import 'echarts/lib/chart/radar'
     import 'echarts/theme/dark'
     
     let dataAll = [323, 267, 212, 184, 118];
@@ -17,10 +19,10 @@
       },
       props:{
         chartWidth:{
-          default: 100
+          default: 800
         },
         chartHeight:{
-          default: 100
+          default: 200
         },
         items:{
           default:[]
@@ -47,10 +49,11 @@
       data:function () {
         return {            
           //图表加载
-          barPies:{
+          barPie:{
                   title:[
-                  {text:"各事件占比",x: '2%', y: '1%',textStyle:{color:"#fff",fontSize:"14"}},
-                  {text:"主要事件top5",x: '40%', y: '1%',textStyle:{color:"#fff",fontSize:"14"}}
+                  {text:"各渠道投诉占比",x: '2%', y: '1%',textStyle:{color:"#fff",fontSize:"14"}},
+                  {text:"主要事件top5",x: '40%', y: '1%',textStyle:{color:"#fff",fontSize:"14"}},
+                  {text:"各级别投诉占比",x: '2%', y: '50%',textStyle:{color:"#fff",fontSize:"14"}},
             ],
             grid: [
                 {x: '50%', y: '7%', width: '45%', height: '90%'},
@@ -69,25 +72,40 @@
             ],
             series: [
                 {
-                    name: '各事件占比',
+                    name: '各渠道投诉占比',
                     type: 'pie',
                     radius : '30%',
                     center: ['22%', '25%'],
                     color:['#86c9f4','#4da8ec','#3a91d2','#005fa6','#315f97'],
                     data:[
-                        {value:323, name:'交通事故'},
-                        {value:267, name:'消费及服务纠纷'},
-                        {value:212, name:'物权纠纷'},
-                        {value:184, name:'合同纠纷'},
-                        {value:118, name:'民事案件'},
+                        {value:335, name:'客服电话'},
+                        {value:310, name:'奥迪官网'},
+                        {value:234, name:'媒体曝光'},
+                        {value:135, name:'质检总局'},
+                        {value:105, name:'其他'},
                     ],
                     labelLine:{normal:{show:false}},
                     itemStyle: {normal: {label:{ show: true,  formatter: '{b} \n ({d}%)', textStyle:{color:'#B1B9D3'}} },},
                 },
                 {
+                    name: '各级别投诉占比',
+                    type: 'pie',
+                    radius : '30%',
+                    center: ['22%', '75%'],
+                    color:['#86c9f4','#4da8ec','#3a91d2','#005fa6','#315f97'],
+                    labelLine:{normal:{show:false}},
+                    data:[
+                        {value:335, name:'A级'},
+                        {value:310, name:'B级'},
+                        {value:234, name:'C级'},
+                        {value:135, name:'D级'},
+                    ],
+                    itemStyle: {normal: {label:{ show: true,  formatter: '{b} \n ({d}%)', textStyle:{color:'#B1B9D3'}} },},
+                },
+                {
                     name: '主要事件top5',
                     type: 'bar',xAxisIndex: 0,yAxisIndex: 0,barWidth:'45%',
-                    itemStyle:{normal:{color:['#86c9f4','#4da8ec','#3a91d2','#005fa6','#315f97']}},
+                    itemStyle:{normal:{color:'#86c9f4'}},
                     label:{normal:{show:true, position:"right",textStyle:{color:"#9EA7C4"}}},
                     data: dataAll.sort(),
                 }                

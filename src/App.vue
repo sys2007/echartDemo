@@ -1,5 +1,8 @@
-<template>
+<template>  
   <div id="app">
+    <div style="height: 60px">
+      <span style="width:50px"/>  a</span> </span><span style="color: #409EFF;font-size: 40px;font-weight: block">雪亮工程－石家庄</span>
+    </div>
     <transition>
       <router-view></router-view>
     </transition>

@@ -30,7 +30,7 @@
   import gauge from './baseCharts/gaugeChart.vue'
   import lineBar from './baseCharts/lineBarChart.vue'
   import barRadar from './baseCharts/barRadarChart.vue'
-  import barPie from './baseCharts/barPiesChart.vue'
+  import barPie from './baseCharts/barPieChart.vue'
 
 export default {
   components:{
