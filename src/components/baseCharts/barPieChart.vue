@@ -21,7 +21,7 @@
           default: 800
         },
         chartHeight:{
-          default: 210
+          default: 185
         }
       },
       mounted:function () {

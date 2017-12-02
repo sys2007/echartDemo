@@ -6,10 +6,11 @@
     </div>
     <div class="page_center" style="background:none;">
         <eventTop/>
+        <mapShow/>
         <composite/>
     </div>
     <div class="page_right" style="background:none;">
-      
+        <running/>
     </div>
   </div>
 </template>
@@ -19,6 +20,9 @@
     import eventTop from './BaseDataShow/EventTop10.vue'
     import areaPeople from './BaseDataShow/areaPeople.vue'
     import composite from './BaseDataShow/composite.vue'
+    import mapShow from './baseCharts/mapShow.vue'
+    import running from './BaseDataShow/runningShow.vue'
+
     export default{
     mounted:function(){
       
@@ -27,7 +31,9 @@
         totalShow,
         eventTop,
         areaPeople,
-        composite
+        composite,
+        mapShow,
+        running
       }
     }
 </script>

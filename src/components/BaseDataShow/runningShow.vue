@@ -3,14 +3,15 @@
     <div class="box_1_top">
       <div class="box_1_top_l"></div>
       <div class="box_1_top_m width1">
-        <div class="box_1_tit">区划人员分析</div>
+        <div class="box_1_tit">运行数据</div>
       </div>
       <div class="box_1_top_r"></div>
     </div>
     <div class="box_1_left">
       <div class="box_1_right height1">
         <div class="box_1_nr">
-          <bars/>
+          <radars/>
+          <tables/>
       </div>
     </div>
 
@@ -23,11 +24,13 @@
 </template>
 
 <script>
-    import bars from '../baseCharts/barsChart.vue'
+    import radars from '../baseCharts/radars.vue'
+    import tables from './tablesShow.vue'
     
     export default{
       components:{
-        bars
+        radars,
+        tables
       },
       mounted:function () {
         this.loadData()
@@ -99,7 +102,7 @@
     position:relative;
   }
   .height1 {
-    height:580px;
+    height:830px;
   }
   .box_1_nr {
     padding: 5px 10px;

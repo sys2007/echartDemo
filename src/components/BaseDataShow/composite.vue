@@ -104,7 +104,7 @@
     position:relative;
   }
   .height1 {
-    height:234px;
+    height:200px;
   }
   .box_1_nr {
     padding: 5px 10px;

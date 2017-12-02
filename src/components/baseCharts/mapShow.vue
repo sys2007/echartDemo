@@ -8,19 +8,22 @@
 <script>
 
   import IEcharts from 'vue-echarts-v3/src/lite.js'
-  import guizhou from 'echarts/map/json/province/guizhou.json';
+  import 'echarts/lib/chart/map'
+  import hebei from 'echarts/map/json/province/hebei.json';
 
-  IEcharts.registerMap('贵州',guizhou);
+  IEcharts.registerMap('河北',hebei);
   var geoCoordMap = {
-    '贵阳': [106.713478,26.578343],
-    '遵义': [106.937265,27.706626],
-    '铜仁': [109.191555,27.718346],
-    '毕节': [105.28501,27.301693],
-    '六盘水': [104.846743,26.584643],
-    '安顺': [105.932188,26.245544],
-    '黔西南布依族苗族自治州': [104.897971,25.08812],
-    '黔南布依族苗族自治州': [107.517156,26.258219],
-    '黔东南苗族侗族自治州': [107.977488,26.583352]
+    '邯郸':[114.47,36.6],
+    '邢台':[114.48,37.05],
+    '石家庄':[114.48,38.03],
+    '保定':[115.48,38.85],
+    '张家口':[114.87,40.82],
+    '廊坊':[116.7,39.53],
+    '衡水':[115.72,37.72],
+    '沧州':[116.83,38.33],
+    '秦皇岛':[119.57,39.95],
+    '唐山':[118.02,39.63],
+    '承德':[117.93,40.97]
   };
   export default {
       components: {
@@ -31,20 +34,18 @@
               default:900
           },
           chartHeight:{
-              default:416
+              default:400
           }
       },
       data(){
         return{
-//          baseDataMapUrl:common.DEFAULT_BASEURL+'/getjson/getMapData',
-          baseDataMapUrl:common.DEFAULT_BASEURL_LUBIN+'/getBaseInfo/getMapData ',
           chartOption: {
 //            backgroundColor: '#404a59',
             geo: {
-              map: '贵州',
+              map: '河北',
               aspectScale:1.3,
               layoutCenter:['50%','50%'],
-              layoutSize:650,
+              layoutSize:400,
               label: {
                 emphasis: {
                   show: false
@@ -119,25 +120,69 @@
       },
       methods:{
         loadData:function () {
-            Vue.http.get(this.baseDataMapUrl).then(response=>{
-                var data = response.data;
-                this.initLineData(data);
-                this.initEffectScatterData(data);
-            })
+          let data = [
+              {
+                  "name": "邯郸",
+                  "value": 55
+              },
+              {
+                  "name": "邢台",
+                  "value": 50
+              },
+              {
+                  "name": "石家庄",
+                  "value": 80
+              },
+              {
+                  "name": "保定",
+                  "value": 10
+              },
+              {
+                  "name": "张家口",
+                  "value": 46
+              },
+              {
+                  "name": "廊坊",
+                  "value": 55
+              },
+              {
+                  "name": "衡水",
+                  "value": 33
+              },
+              {
+                  "name": "沧州",
+                  "value": 47
+              },
+              {
+                  "name": "秦皇岛",
+                  "value": 38
+              },
+              {
+                  "name": "唐山",
+                  "value": 38
+              },
+              {
+                  "name": "承德",
+                  "value": 38
+              }
+          ]
+          this.initLineData(data);
+          this.initEffectScatterData(data);
+           
         },
         initLineData:function (data) {
           let res = [];
-          var toCoord = geoCoordMap['贵阳'];
+          var toCoord = geoCoordMap['石家庄'];
           for (var i = 0; i < data.length; i++) {
             var dataItem = data[i];
-            if(dataItem.name==='贵阳'){
+            if(dataItem.name==='石家庄'){
               continue;
             }
             var fromCoord = geoCoordMap[dataItem.name];
             if (fromCoord && toCoord) {
               res.push({
                 fromName: dataItem.name,
-                toName: '贵阳',
+                toName: '石家庄',
                 coords: [fromCoord,toCoord]
               });
             }
@@ -161,9 +206,9 @@
   .box_map {
     width:950px;
     margin-left:10px;
-    margin-top:10px;
-    height:421px;
+    /*margin-top:10px;*/
+    height:380px;
     text-align:center;
-    padding-top:10px;
+    /*padding-top:10px;*/
   }
 </style>
