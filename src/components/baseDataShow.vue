@@ -49,7 +49,6 @@
     background:#02071b;
   }
   .page_body {
-    
     background-size:100% 100%;
     width:1920px;
   }
