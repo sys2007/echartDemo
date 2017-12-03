@@ -1,7 +1,7 @@
 <template>  
   <div id="app">
-    <div style="height: 55px">
-      <span style="width:50px"/>  a</span> </span><span style="color: #409EFF;font-size: 40px;font-weight: block">雪亮工程－石家庄</span>
+    <div style="width:100%;height: 55px;text-align: center">
+      <div style="margin: 0 auto"><img src='./assets/logo.png'/></div>      
     </div>
     <transition>
       <router-view></router-view>
