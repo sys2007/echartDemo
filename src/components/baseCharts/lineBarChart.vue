@@ -9,6 +9,7 @@
     import IEcharts from 'vue-echarts-v3/src/lite.js'
     import 'echarts/lib/chart/gauge'
     import 'echarts/theme/dark'
+    let colors = ['#5793f3', '#d14a61'];
     export default{
       components:{
         IEcharts
@@ -38,6 +39,7 @@
         data:function () {
           return {
             gauge:{
+                color: colors,
                 tooltip:{
                   trigger: 'axis',
                   axisPointer: {
@@ -47,6 +49,9 @@
                       }
                   }
                 },
+                // grid: {
+                //     right: '20%'
+                // },
                 // toolbox: {
                 //     feature: {
                 //         dataView: {show: true, readOnly: false},
@@ -62,6 +67,9 @@
                 xAxis: [
                     {
                         type: 'category',
+                        axisTick: {
+                            alignWithLabel: true
+                        },
                         data: ['市公安局','市环保局','市卫生局','市交管局','市工商局'],
                         axisPointer: {
                             type: 'shadow'
@@ -77,10 +85,16 @@
                 yAxis: [
                     {
                         type: 'value',
-                        // name: '处置量',
+                        name: '处置量',
                         min: 0,
                         max: 500,
+                        position: 'left',
                         //interval: 100,
+                        axisLine: {
+                            lineStyle: {
+                                color: colors[0]
+                            }
+                        },
                         axisLabel: {
                           formatter: '{value} ',
                           show:true,
@@ -91,10 +105,16 @@
                     },
                     {
                         type: 'value',
-                        // name: '完好率',
+                        name: '完好率',
                         min: 0,
                         max: 100,
+                        position: 'right',
                         //interval: 5,
+                        axisLine: {
+                            lineStyle: {
+                                color: colors[1]
+                            }
+                        },
                         axisLabel: {
                             formatter: '{value} %',
                             show:true,
@@ -108,11 +128,13 @@
                     {
                         name:'处置量',
                         type:'bar',
+                        barMaxWidth: 20,
                         data:[455, 342, 323, 322, 298]
                     },
                     {
                         name:'完好率',
                         type:'line',
+                        yAxisIndex: 1,
                         data:[99, 97, 96, 100, 95]
                     }
                 ]

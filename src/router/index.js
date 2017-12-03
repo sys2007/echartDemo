@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import ChartsDemos from '@/components/ChartsDemos'
-import dataShowDemo from '@/components/baseDataShow'
+import dataShowDemo2 from '@/components/baseDataShow2'
 
 Vue.use(Router)
 
@@ -11,7 +11,7 @@ export default new Router({
     {
       path: '/',
       name: 'dataShowDemo',
-      component: dataShowDemo
+      component: dataShowDemo2
     },
     {
       path: '/chartDemo',

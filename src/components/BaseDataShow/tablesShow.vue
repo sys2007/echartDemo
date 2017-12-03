@@ -1,6 +1,6 @@
 <template>
     <el-table     
-      :data="tableData"      
+      :data="tableData"
       style="width: 100%;background-color:transparent !important;">
       <el-table-column        
         prop="id"
@@ -69,6 +69,10 @@
     .el-table tr,
     .el-table th,
     .cell {
+      color: #fff;
       background-color: transparent !important;
     }
+    .el-table th {}
+    .el-table tr {}
+      
   </style>
