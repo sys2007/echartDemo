@@ -16,7 +16,7 @@
 
 <script>
     import totalShow from './BaseDataShow2/TotalShow.vue' 
-    import eventTop from './BaseDataShow/EventTop10.vue'
+    import eventTop from './BaseDataShow2/EventTop10.vue'
     import areaPeople from './BaseDataShow2/areaPeople.vue'
     import composite from './BaseDataShow/composite.vue'
     import scatter from './baseCharts/columnPieChart.vue'

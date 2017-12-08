@@ -52,12 +52,8 @@
 </template>
 
 <script>
-    import customGauge from '../baseCharts/gaugeChart.vue'
     
-    export default{
-      components:{
-        customGauge
-      },
+    export default{      
       mounted:function () {
         this.loadData()
       },
